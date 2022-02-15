@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3 - Conditions</title>
+</head>
+<body>
+    <button id="go">my button</button>
+
+    <script defer> /*this defers running until after the page loads */
+        const mynum = 5;
+
+        if(mynum > 10) {
+            console.log(mynum, "mynum is greater than zero");
+        } else if(mynum === 5) {
+            console.log(mynum, "mynum is exactly 5");
+            console.log(`${mynum} is 5`); /*must use a backtick next to 1 - template literal - good for combining variables and text together*/
+            console.log(mynum + " is five"); /*more tricky bec of spaces for formatting */
+        } else if(mynum == "green") {
+            console.log("mynum is something not 5 and less than 10");
+        }
+
+        console.log(mynum);
+        console.log("code after condition");
+        /*
+        console.log(5 == "5");
+        console.log(5 === "5");
+
+        console.log(!true);
+        console.log(!false);
+        if((mynum >= 0) && (mynum <= 100)) {
+            console.log(`${mynum} is between 0 and 100, inclusive`);
+        }
+        if((mynum >= 10) || (mynum <= 100)) {
+            console.log(`${mynum} is either larger than/equal to 10 or less/equal to= 100, inclusive`);
+        }
+        */
+
+/*use code to check to see if an element exists on our page first before we try to program it */
+        const button = document.getElementById('go');
+        if(button) {
+            console.log("we have a button!");
+            /*
+            button.onclick = alert("hello"); */   
+            /*this is an event handler directly on the code */
+            /* need to do this to make it work, onclick needs to point to some function so that it doesn't just run when it loads as in above */
+           
+           /* we can also check the boolean condition if an element exists on ... */
+            button.onclick = ()=>{
+                alert("hello");
+            }
+            buton.onclick = function() {
+                alert('hello again');
+            }
+        }
+
+    </script>
+</body>
+</html>
